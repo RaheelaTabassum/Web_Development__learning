@@ -9,19 +9,19 @@ const userInfoContainer = document.querySelector(".user-info-container");
 
 
 let currentTab = userTab;
-const API_Key = ""
+const API_Key = "367a5a8ed2fe6beb6662f593dc6def61"
 
 currentTab.classList.add("current-tab");
 
 
 
 function switchTab(clickedTab){ 
-    if (clickedTab != currentTab){
+    if(clickedTab != currentTab){
         currentTab.classList.remove("current-tab");
         currentTab = clickedTab;
         currentTab.classList.add("current-tab");
         
-        if (! SearchForm.classList.contains("active")){
+        if (!SearchForm.classList.contains("active")){
             userInfoContainer.classList.remove("active");
             grantAccessContainer.classList.remove("active");
             SearchForm.classList.add("active"); 
@@ -29,7 +29,8 @@ function switchTab(clickedTab){
         }
         else {
             SearchForm.classList.remove("active");
-            userInfoContainer.remove("active")
+            userInfoContainer.remove("active");
+            getfromSessionStorage();
         }
    }
 }
